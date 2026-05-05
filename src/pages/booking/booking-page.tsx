@@ -1,7 +1,7 @@
 export const BookingPage = () => {
     return (
         <>
-            Booking
+            <h1>Booking Page</h1>
         </>
     )
 }
