@@ -1,0 +1,18 @@
+.title {
+  color: var(--text-base);
+}
+
+.container {
+  margin-top: 52px;
+  display: flex;
+  justify-self: center;
+  gap: 24px;
+}
+
+.container_button {
+  width: 200px;
+  height: 100px;
+  border-radius: 16px;
+  background-color: var(--text-base);
+  font-size: 22px;
+}

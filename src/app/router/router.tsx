@@ -11,6 +11,7 @@ import { DetailReviewsPage } from "../../pages/reviews/detail-reviews-page";
 import { DetailSpacesPage } from "../../pages/space/detail-spaces-page";
 import { ProfilePage } from "../../pages/user/profile-page";
 import { NotFoundPage } from "../../pages/error/not-found-page";
+import GuardPage from "../../pages/guard/guard-page";
 
 export const router = createBrowserRouter([{
     path: "/",
@@ -18,47 +19,69 @@ export const router = createBrowserRouter([{
     children: [
         {
             path: "/",
-            element: <HomePage />
+            element: <GuardPage>
+                <HomePage />
+            </GuardPage>
         },
         {
             path: "/register",
-            element: <RegPage />
+            element: <GuardPage>
+                <RegPage />
+            </GuardPage>
         },
         {
             path: "/login",
-            element: <LoginPage />
+            element: <GuardPage>
+                <LoginPage />
+            </GuardPage>
         },
         {
             path: "/spaces",
-            element: <SpacesPage />
+            element: <GuardPage>
+                <SpacesPage />
+            </GuardPage>
         },
         {
             path: "/reviews",
-            element: <ReviewsPage />
+            element: <GuardPage approveRoles={["manager", "admin"]}>
+                <ReviewsPage />
+            </GuardPage>
         },
         {
             path: "/bookings",
-            element: <BookingPage />
+            element: <GuardPage>
+                <BookingPage />
+            </GuardPage>
         },
         {
             path: "/bookings/:id",
-            element: <DetailBookingPage />
+            element: <GuardPage approveRoles={["manager", "admin"]}>
+                <DetailBookingPage />
+            </GuardPage>
         },
         {
             path: "/reviews/:id",
-            element: <DetailReviewsPage />
+            element: <GuardPage>
+                <DetailReviewsPage />
+            </GuardPage>
         },
         {
             path: "/spaces/:id",
-            element: <DetailSpacesPage />
+            element: <GuardPage>
+                <DetailSpacesPage />
+            </GuardPage>
         },
         {
             path: "/profile",
-            element: <ProfilePage />
+            element: <GuardPage approveRoles={["client", "manager", "admin"]}>
+                <ProfilePage />
+            </GuardPage>
         },
         {
             path: "*",
-            element: <NotFoundPage />
+            element: <GuardPage>
+                <NotFoundPage />
+            </GuardPage>
         },
     ]
 }])
