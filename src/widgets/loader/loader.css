@@ -13,7 +13,7 @@
     height: 50px;
     border-radius: 50%;
     background-color: rgb(255, 211, 152);
-    animation:loader 6s infinite;
+    animation:loader 5s infinite;
     display: flex;
     align-items: center;
     justify-content: center;
