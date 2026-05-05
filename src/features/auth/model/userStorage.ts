@@ -5,10 +5,7 @@ export const userStorage = {
     getRefreshToken: () => localStorage.getItem('refreshToken'),
     getUser: (): UserType | null => {
         const strUser = localStorage.getItem('user')
-        if(strUser){
-            return JSON.parse(strUser)
-        }
-        return null
+        return strUser ? JSON.parse(strUser) :  null
     },
     setAccessToken: (token: string) => localStorage.setItem('accessToken', token),
     setRefreshToken: (token: string) => localStorage.setItem('refreshToken', token),

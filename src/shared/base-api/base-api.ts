@@ -2,7 +2,7 @@ import axios from "axios";
 import { userStorage } from "../../features/auth/model/userStorage";
 
 export const baseApi = axios.create({
-    baseURL:import.meta.env.VITE_API_URL || "http://localhost:3009",
+    baseURL:import.meta.env.VITE_API_URL || "http://localhost:3010",
     headers:{
         "Content-Type":"application/json"
     }

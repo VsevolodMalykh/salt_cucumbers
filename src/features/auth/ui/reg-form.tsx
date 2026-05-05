@@ -28,14 +28,14 @@ function RegForm() {
         <Controller control={control} name="password" render={({field}) => (
             <label>
                 {field.name}
-                <input type="text" placeholder={field.name} value={field.value} onChange={field.onChange}/>
+                <input type="password" placeholder={field.name} value={field.value} onChange={field.onChange}/>
                 {errors[field.name] && <p>{errors[field.name].message}</p>}
             </label>
         )}/>
         <Controller control={control} name="email" render={({field}) => (
             <label>
                 {field.name}
-                <input type="text" placeholder={field.name} value={field.value} onChange={field.onChange}/>
+                <input type="email" placeholder={field.name} value={field.value} onChange={field.onChange}/>
                 {errors[field.name] && <p>{errors[field.name].message}</p>}
             </label>
         )}/>

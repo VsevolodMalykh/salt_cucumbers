@@ -1,5 +1,1 @@
-export type RegType = {
-    email: string,
-    name: string,
-    password: string
-}
+export type RegType = Record<"name" | "email" | "password", string>
