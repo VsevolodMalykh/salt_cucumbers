@@ -1,7 +1,8 @@
 import axios from "axios";
+import { userStorage } from "../../features/auth/model/userStorage";
 
 export const baseApi = axios.create({
-    baseURL:import.meta.env.VITE_API_URL || "http://localhost:3009",
+    baseURL:import.meta.env.VITE_API_URL || "http://localhost:3010",
     headers:{
         "Content-Type":"application/json"
     }
@@ -9,7 +10,7 @@ export const baseApi = axios.create({
 
 baseApi.interceptors.request.use(
     (config) => {
-        const accessToken = ""
+        const accessToken = userStorage.getAccessToken()
         if(accessToken){
             config.headers.Authorization = `Bearer ${accessToken}`
         }
@@ -20,7 +21,7 @@ baseApi.interceptors.request.use(
 baseApi.interceptors.response.use(
     (config) => config,
     async (error) => {
-        const refreshToken = ""
+        const refreshToken = userStorage.getRefreshToken()
         if(error.config?.status === 401){
             const {data} = await baseApi.post<{accessToken:string}>("/auth/refresh",{refreshToken})
             if(data.accessToken){

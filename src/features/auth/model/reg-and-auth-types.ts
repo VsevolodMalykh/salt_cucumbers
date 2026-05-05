@@ -1,0 +1,1 @@
+export type RegType = Record<"name" | "email" | "password", string>
