@@ -9,6 +9,7 @@ export const Header = () => {
             <Link to={"/reviews"}>Reviews</Link>
             <Link to={"/profile"}>Profile</Link>
             <Link to={"/spaces"}>Spaces</Link>
+            <Link to={"/"}>Home</Link>
         </nav>
     )
 }
