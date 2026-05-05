@@ -10,6 +10,7 @@ import { DetailBookingPage } from "../../pages/booking/detail-booking-page";
 import { DetailReviewsPage } from "../../pages/reviews/detail-reviews-page";
 import { DetailSpacesPage } from "../../pages/space/detail-spaces-page";
 import { ProfilePage } from "../../pages/user/profile-page";
+import { NotFoundPage } from "../../pages/error/not-found-page";
 
 export const router = createBrowserRouter([{
     path: "/",
@@ -54,6 +55,10 @@ export const router = createBrowserRouter([{
         {
             path: "/profile",
             element: <ProfilePage />
+        },
+        {
+            path: "*",
+            element: <NotFoundPage />
         },
     ]
 }])

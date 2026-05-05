@@ -1,9 +1,8 @@
-import { Loader } from "../../widgets/loader/loader"
 
 export const BookingPage = () => {
     return (
         <>
-            <Loader/>
+            <h1>Booking Page</h1>
         </>
     )
 }
