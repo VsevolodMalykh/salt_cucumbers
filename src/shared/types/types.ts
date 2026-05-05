@@ -1,0 +1,1 @@
+export type RoleType = 'guest' | 'client' | 'manager' | 'admin'

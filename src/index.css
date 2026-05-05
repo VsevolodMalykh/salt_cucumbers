@@ -1,13 +1,14 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
+  --text: #ffffff;
+  --text-base: #c9a1fa;
+  --text-h: #ffffff;
   --bg: #fff;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
   --accent: #aa3bff;
   --accent-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
+  --social-bg: rgb(255, 255, 255);
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
@@ -36,9 +37,9 @@
     --text-h: #f3f4f6;
     --bg: #16171d;
     --border: #2e303a;
-    --code-bg: #1f2028;
+    --code-bg: #f9faff;
     --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-bg: rgba(230, 228, 228, 0.996);
     --accent-border: rgba(192, 132, 252, 0.5);
     --social-bg: rgba(47, 48, 58, 0.5);
     --shadow:
@@ -66,11 +67,16 @@ body {
   margin: 0;
 }
 
+h1, h2, h3, h4, h5, h6,
+p, span, code, b, i, div {
+  color: var(--text-base);
+}
+
 h1,
 h2 {
   font-family: var(--heading);
   font-weight: 500;
-  color: var(--text-h);
+  color: var(--text-base);
 }
 
 h1 {
@@ -91,8 +97,18 @@ h2 {
     font-size: 20px;
   }
 }
+
+h3 {
+  color: var(--text-base);
+}
+
 p {
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: wheat;
 }
 
 code,
@@ -108,4 +124,11 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+.base_text {
+  font-size: 1em;
+  font-style: inherit; 
+  font-weight: 600;
+  font-family: 'Times New Roman', Times, serif;
 }
